@@ -7,7 +7,7 @@ variable "region" {
 }
 
 variable "azs" {
-  default = ["ap-southeast-1a", "ap-southeast-1c", "ap-southeast-1d"]
+  default = ["ap-southeast-1a", "ap-southeast-1b", "ap-southeast-1c"]
   type    = "list"
 }
 
