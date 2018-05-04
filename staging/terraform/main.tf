@@ -13,7 +13,14 @@ module "vpc" {
   }
 }
 
-locals {
-  public_sn_cidr  = "${cidrsubnet(var.vpc_cidr, 2, 0)}"
-  private_sn_cidr = "${cidrsubnet(var.vpc_cidr, 2, 2)}"
+module "public_subnets" {
+  source         = "./public_subnets"
+  name           = "${var.name}"
+  vpc_id         = "${module.vpc.vpc_id}"
+  azs            = "${var.azs}"
+  public_sn_cidr = "${cidrsubnet(var.vpc_cidr, 2, 0)}"
+
+  tags {
+    Terraformed = "true"
+  }
 }
