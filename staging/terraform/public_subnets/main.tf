@@ -25,6 +25,15 @@ resource "aws_eip" "nat_eip" {
   vpc   = true
 }
 
+/*
+Why we need redundant nat gateways in each AZ?
+
+If you have resources in multiple Availability Zones and they share one NAT gateway, 
+in the event that the NAT gateway’s Availability Zone is down, resources in the other 
+Availability Zones lose internet access. To create an Availability Zone-independent 
+architecture, create a NAT gateway in each Availability Zone and configure your routing 
+to ensure that resources use the NAT gateway in the same Availability Zone.
+*/
 resource "aws_nat_gateway" "nat_gw" {
   count         = "${length(var.azs)}"
   allocation_id = "${aws_eip.nat_eip.*.id[count.index]}"
