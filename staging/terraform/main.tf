@@ -56,3 +56,16 @@ module "public-route-table" {
     Terraformed = "true"
   }
 }
+
+module "private-route-table" {
+  source             = "./private-route-table"
+  name               = "${var.name}"
+  vpc_id             = "${module.vpc.vpc_id}"
+  private_subnet_ids = "${module.private_subnets.private_subnet_ids}"
+  nat_gateway_ids    = "${module.public_subnets.nat_gateway_ids}"
+  azs                = "${var.azs}"
+
+  tags {
+    Terraformed = "true"
+  }
+}
