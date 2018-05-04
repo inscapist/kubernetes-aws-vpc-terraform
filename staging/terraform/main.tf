@@ -1,3 +1,11 @@
+terraform {
+  backend "s3" {
+    bucket = "intelllex-se-tfstate"
+    key    = "k8i.tfstate"
+    region = "ap-southeast-1"
+  }
+}
+
 provider "aws" {
   region  = "ap-southeast-1"
   version = "~> 1.17"
