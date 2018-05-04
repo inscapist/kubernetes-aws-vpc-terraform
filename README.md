@@ -16,3 +16,7 @@ The steps to create a kops cluster using this starter project:
 5. Run `terraform plan` and then `terraform apply`
 6. Create a private hosted zone (optional) on Route53
 7. Create a public hosted zone on Route53 [Details](https://github.com/kubernetes/kops/blob/master/docs/aws.md)
+
+# Credits
+
+This project is inspired by this article by [Kasper Nissen](https://kubecloud.io/setting-up-a-highly-available-kubernetes-cluster-with-private-networking-on-aws-using-kops-65f7a94782ef) 
