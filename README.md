@@ -16,6 +16,8 @@ The steps to create a kops cluster using this starter project:
 5. Run `terraform plan` and then `terraform apply`
 6. Create a private hosted zone (optional) on Route53
 7. Create a public hosted zone on Route53 [Details](https://github.com/kubernetes/kops/blob/master/docs/aws.md)
+8. Run `kops create cluster`
+9. Install weave, calico or other CNI plugins, to use Weave, install this addon here `kubectl apply -f https://raw.githubusercontent.com/sagittaros/kops-terraform-starter/master/common/weave-daemonset-k8s-1.10.yaml`
 
 ## Credits
 
