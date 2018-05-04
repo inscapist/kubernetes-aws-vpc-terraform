@@ -19,3 +19,19 @@ resource "aws_subnet" "public" {
   map_public_ip_on_launch = true
   tags                    = "${merge(map("Name", "${var.name}-sn-public-${data.aws_availability_zone.az.*.name_suffix[count.index]}"), var.tags)}"
 }
+
+resource "aws_eip" "nat_eip" {
+  count = "${length(var.azs)}"
+  vpc   = true
+}
+
+resource "aws_nat_gateway" "nat_gw" {
+  count         = "${length(var.azs)}"
+  allocation_id = "${aws_eip.nat_eip.*.id[count.index]}"
+  subnet_id     = "${aws_subnet.public.*.id[count.index]}"
+
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes        = ["subnet_id"]
+  }
+}
