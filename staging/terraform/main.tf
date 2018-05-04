@@ -12,3 +12,8 @@ module "vpc" {
     Terraformed = "true"
   }
 }
+
+locals {
+  public_sn_cidr  = "${cidrsubnet(var.vpc_cidr, 2, 0)}"
+  private_sn_cidr = "${cidrsubnet(var.vpc_cidr, 2, 2)}"
+}
