@@ -11,10 +11,6 @@ variable "azs" {
   type    = "list"
 }
 
-variable "env" {
-  default = "st"
-}
-
 variable "vpc_cidr" {
   default = "10.1.0.0/16"
 }
