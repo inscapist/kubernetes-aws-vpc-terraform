@@ -44,3 +44,15 @@ module "private_subnets" {
     Terraformed = "true"
   }
 }
+
+module "public-route-table" {
+  source              = "./public-route-table"
+  name                = "${var.name}"
+  vpc_id              = "${module.vpc.vpc_id}"
+  internet_gateway_id = "${module.vpc.internet_gateway_id}"
+  public_subnet_ids   = "${module.public_subnets.public_subnet_ids}"
+
+  tags {
+    Terraformed = "true"
+  }
+}
