@@ -24,3 +24,15 @@ module "public_subnets" {
     Terraformed = "true"
   }
 }
+
+module "private_subnets" {
+  source          = "./private_subnets"
+  name            = "${var.name}"
+  vpc_id          = "${module.vpc.vpc_id}"
+  azs             = "${var.azs}"
+  private_sn_cidr = "${cidrsubnet(var.vpc_cidr, 2, 2)}"
+
+  tags {
+    Terraformed = "true"
+  }
+}
