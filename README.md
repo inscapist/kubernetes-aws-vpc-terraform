@@ -5,7 +5,7 @@ Customize `variables.tf` to suit your need. Kops `create-cluster` command is not
 
 Project uses 3 AZs, each AZ has a private and public subnet. More details please see [Subnet Design Document](https://github.com/sagittaros/kops-terraform-starter/blob/master/staging/terraform/design_document.md)
 
-# Usage
+## Usage
 
 The steps to create a kops cluster using this starter project:
 
@@ -17,6 +17,6 @@ The steps to create a kops cluster using this starter project:
 6. Create a private hosted zone (optional) on Route53
 7. Create a public hosted zone on Route53 [Details](https://github.com/kubernetes/kops/blob/master/docs/aws.md)
 
-# Credits
+## Credits
 
 This project is inspired by this article by [Kasper Nissen](https://kubecloud.io/setting-up-a-highly-available-kubernetes-cluster-with-private-networking-on-aws-using-kops-65f7a94782ef) 
