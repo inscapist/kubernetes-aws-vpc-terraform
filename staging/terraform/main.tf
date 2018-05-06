@@ -46,6 +46,7 @@ module "public-route-table" {
   vpc_id              = "${module.vpc.vpc_id}"
   internet_gateway_id = "${module.vpc.internet_gateway_id}"
   public_subnet_ids   = "${module.public_subnets.public_subnet_ids}"
+  azs                 = "${var.azs}"
 
   tags {
     Terraformed = "true"
@@ -65,6 +66,7 @@ module "private-route-table" {
   }
 }
 
-module "kubernetes-by-kops" {
-  source = "./k8s"
-}
+# module "kubernetes-by-kops" {
+#   source = "./k8s"
+# }
+

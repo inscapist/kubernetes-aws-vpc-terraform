@@ -14,7 +14,7 @@ resource "aws_route" "internet_route" {
 }
 
 resource "aws_route_table_association" "public" {
-  count          = "${length(var.public_subnet_ids)}"
+  count          = "${length(var.azs)}"
   subnet_id      = "${var.public_subnet_ids[count.index]}"
   route_table_id = "${aws_route_table.public.id}"
 
