@@ -17,7 +17,7 @@ The steps to create a kops cluster using this starter project:
 6. Create a public hosted zone on Route53 [Details](https://github.com/kubernetes/kops/blob/master/docs/aws.md)
 7. Follow numbered kops/*.sh to create kops cluster and save to `terraform/k8s`
 8. Go to `terraform` and run `terraform init; terraform plan; terraform apply;`
-9. Make sure you have api.<yourdomain> and bastion.<yourdomain> in your public DNS zone.
+9. Make sure you have api.DOMAIN and bastion.DOMAIN in your public DNS zone.
 10. run kops validate cluster
 
 Check the pods running in kube_system by running `kubectl get pod --namespace kube-system`
