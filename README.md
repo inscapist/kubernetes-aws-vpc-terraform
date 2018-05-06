@@ -61,8 +61,11 @@ WeaveNet is baked in! Now you have a fully functional kops cluster!
 ## Versions
 
 Terraform v0.11.7
+
 Kops v1.9.0
+
 Kubernetes v1.9.3
+
 
 ## Credits
 
