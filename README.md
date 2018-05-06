@@ -13,13 +13,12 @@ The steps to create a kops cluster using this starter project:
 2. Customize `terraform` using `variables.tf`
 3. Create a S3 bucket as Kops state store, refer my script [here](https://github.com/sagittaros/kops-terraform-starter/blob/master/staging/kops/01_create_bucket.sh)
 4. Create a S3 bucket as Terraform Backend, then customize it at `main.tf`
-5. Run `terraform plan` and then `terraform apply`
-6. Create a private hosted zone (optional) on Route53
-7. Create a public hosted zone on Route53 [Details](https://github.com/kubernetes/kops/blob/master/docs/aws.md)
-8. Follow numbered kops/*.sh to create kops cluster and save to `terraform/k8s`
-9. Go to `terraform` and run `terraform init; terraform plan; terraform apply;`
-10. Make sure you have api.<yourdomain> and bastion.<yourdomain> in your public DNS zone.
-11. run kops validate cluster
+5. Create a private hosted zone (optional) on Route53
+6. Create a public hosted zone on Route53 [Details](https://github.com/kubernetes/kops/blob/master/docs/aws.md)
+7. Follow numbered kops/*.sh to create kops cluster and save to `terraform/k8s`
+8. Go to `terraform` and run `terraform init; terraform plan; terraform apply;`
+9. Make sure you have api.<yourdomain> and bastion.<yourdomain> in your public DNS zone.
+10. run kops validate cluster
 
 Check the pods running in kube_system by running `kubectl get pod --namespace kube-system`
 ```
