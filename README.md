@@ -18,7 +18,45 @@ The steps to create a kops cluster using this starter project:
 7. Create a public hosted zone on Route53 [Details](https://github.com/kubernetes/kops/blob/master/docs/aws.md)
 8. Follow numbered kops/*.sh to create kops cluster and save to `terraform/k8s`
 9. Go to `terraform` and run `terraform init; terraform plan; terraform apply;`
-10. Install weave, calico or other CNI plugins, to use Weave, install this addon here `kubectl apply -f https://raw.githubusercontent.com/sagittaros/kops-terraform-starter/master/common/weave-daemonset-k8s-1.10.yaml`
+10. Make sure you have api.<yourdomain> and bastion.<yourdomain> in your public DNS zone.
+11. run kops validate cluster
+
+Check the pods running in kube_system by running `kubectl get pod --namespace kube-system`
+```
+NAME                                                                      READY     STATUS    RESTARTS   AGE
+dns-controller-7954c48879-qxlfv                                           1/1       Running   0          48m
+etcd-server-events-ip-10-1-142-70.ap-southeast-1.compute.internal         1/1       Running   4          47m
+etcd-server-events-ip-10-1-147-202.ap-southeast-1.compute.internal        1/1       Running   4          48m
+etcd-server-events-ip-10-1-164-244.ap-southeast-1.compute.internal        1/1       Running   5          47m
+etcd-server-ip-10-1-142-70.ap-southeast-1.compute.internal                1/1       Running   1          48m
+etcd-server-ip-10-1-147-202.ap-southeast-1.compute.internal               1/1       Running   0          48m
+etcd-server-ip-10-1-164-244.ap-southeast-1.compute.internal               1/1       Running   2          46m
+kube-apiserver-ip-10-1-142-70.ap-southeast-1.compute.internal             1/1       Running   2          48m
+kube-apiserver-ip-10-1-147-202.ap-southeast-1.compute.internal            1/1       Running   0          47m
+kube-apiserver-ip-10-1-164-244.ap-southeast-1.compute.internal            1/1       Running   0          46m
+kube-controller-manager-ip-10-1-142-70.ap-southeast-1.compute.internal    1/1       Running   0          47m
+kube-controller-manager-ip-10-1-147-202.ap-southeast-1.compute.internal   1/1       Running   0          48m
+kube-controller-manager-ip-10-1-164-244.ap-southeast-1.compute.internal   1/1       Running   0          46m
+kube-dns-7785f4d7dc-sw8sr                                                 3/3       Running   0          46m
+kube-dns-7785f4d7dc-vd8fm                                                 3/3       Running   0          48m
+kube-dns-autoscaler-787d59df8f-rb5g2                                      1/1       Running   0          48m
+kube-proxy-ip-10-1-136-100.ap-southeast-1.compute.internal                1/1       Running   0          47m
+kube-proxy-ip-10-1-142-70.ap-southeast-1.compute.internal                 1/1       Running   0          47m
+kube-proxy-ip-10-1-144-200.ap-southeast-1.compute.internal                1/1       Running   0          46m
+kube-proxy-ip-10-1-147-202.ap-southeast-1.compute.internal                1/1       Running   0          48m
+kube-proxy-ip-10-1-164-244.ap-southeast-1.compute.internal                1/1       Running   0          46m
+kube-proxy-ip-10-1-174-66.ap-southeast-1.compute.internal                 1/1       Running   0          47m
+kube-scheduler-ip-10-1-142-70.ap-southeast-1.compute.internal             1/1       Running   0          47m
+kube-scheduler-ip-10-1-147-202.ap-southeast-1.compute.internal            1/1       Running   0          48m
+kube-scheduler-ip-10-1-164-244.ap-southeast-1.compute.internal            1/1       Running   0          47m
+weave-net-4h5t7                                                           2/2       Running   0          47m
+weave-net-9drwh                                                           2/2       Running   0          48m
+weave-net-bnzjt                                                           2/2       Running   2          47m
+weave-net-fnmrs                                                           2/2       Running   0          48m
+weave-net-l2spt                                                           2/2       Running   0          47m
+weave-net-l8tpf                                                           2/2       Running   0          47m
+```
+WeaveNet is baked in! Now you have a fully functional kops cluster! 
 
 ## Credits
 
