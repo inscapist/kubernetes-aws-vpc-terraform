@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket = "intelllex-se-tfstate"
+    bucket = "<backend bucket>"
     key    = "k8i.tfstate"
     region = "ap-southeast-1"
   }
