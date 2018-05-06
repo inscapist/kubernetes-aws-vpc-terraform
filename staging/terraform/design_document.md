@@ -25,12 +25,12 @@
 ## CIDR for AZs (terraform representation):
 ```
   1a-public (10.1.0.0/20) => cidrsubnet("10.1.0.0/18", 2, 0) 
-  1b-public (10.1.16.0/20) => cidrsubnet("10.1.0.0/18", 2, 1) 
-  1c-public (10.1.32.0/20) => cidrsubnet("10.1.0.0/18", 2, 2) 
+  1a-public (10.1.16.0/20) => cidrsubnet("10.1.0.0/18", 2, 1) 
+  1a-public (10.1.32.0/20) => cidrsubnet("10.1.0.0/18", 2, 2) 
 
   1a-private (10.1.128.0/20) => cidrsubnet("10.1.128.0/18", 2, 0) 
-  1b-private (10.1.144.0/20 ) => cidrsubnet("10.1.128.0/18", 2, 1) 
-  1c-private (10.1.160.0/20) => cidrsubnet("10.1.128.0/18", 2, 2) 
+  1a-private (10.1.144.0/20 ) => cidrsubnet("10.1.128.0/18", 2, 1) 
+  1a-private (10.1.160.0/20) => cidrsubnet("10.1.128.0/18", 2, 2) 
 ```
 
 Systematic Terraform Calculation:

@@ -1,9 +1,9 @@
 # kops-terraform-starter
 VPC written in terraform, as a preparation step for **HA, Private DNS, Private Topology** Kops Cluster
 
-Customize `variables.tf` to suit your need. Kops `create-cluster` command is not provided, please see [Official Documentation](https://github.com/kubernetes/kops)
+Customize `terraform/variables.tf` and `kops/02_create_cluster` to suit your need.
 
-Project uses 3 AZs, each AZ has a private and public subnet. More details please see [Subnet Design Document](https://github.com/sagittaros/kops-terraform-starter/blob/master/staging/terraform/design_document.md)
+Project uses 3 AZs, each AZ has a private and public subnet for kops **private subnet** and kops **utility subnet** respectively. More details please see [Subnet Design Document](https://github.com/sagittaros/kops-terraform-starter/blob/master/staging/terraform/design_document.md)
 
 ## Usage
 
@@ -16,8 +16,9 @@ The steps to create a kops cluster using this starter project:
 5. Run `terraform plan` and then `terraform apply`
 6. Create a private hosted zone (optional) on Route53
 7. Create a public hosted zone on Route53 [Details](https://github.com/kubernetes/kops/blob/master/docs/aws.md)
-8. Run `kops create cluster`
-9. Install weave, calico or other CNI plugins, to use Weave, install this addon here `kubectl apply -f https://raw.githubusercontent.com/sagittaros/kops-terraform-starter/master/common/weave-daemonset-k8s-1.10.yaml`
+8. Follow numbered kops/*.sh to create kops cluster and save to `terraform/k8s`
+9. Go to `terraform` and run `terraform init; terraform plan; terraform apply;`
+10. Install weave, calico or other CNI plugins, to use Weave, install this addon here `kubectl apply -f https://raw.githubusercontent.com/sagittaros/kops-terraform-starter/master/common/weave-daemonset-k8s-1.10.yaml`
 
 ## Credits
 

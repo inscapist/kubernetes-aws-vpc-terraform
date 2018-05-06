@@ -6,11 +6,6 @@ terraform {
   }
 }
 
-provider "aws" {
-  region  = "ap-southeast-1"
-  version = "~> 1.17"
-}
-
 module "vpc" {
   source   = "./vpc"
   name     = "${var.name}"
@@ -68,4 +63,8 @@ module "private-route-table" {
   tags {
     Terraformed = "true"
   }
+}
+
+module "kubernetes-by-kops" {
+  source = "./k8s"
 }

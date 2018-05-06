@@ -1,0 +1,14 @@
+kops has set your kubectl context to k8i.intelllex.se
+
+Terraform output has been placed into ../terraform/k8s
+Run these commands to apply the configuration:
+   cd ../terraform/k8s
+   terraform plan
+   terraform apply
+
+Suggestions:
+ * validate cluster: kops validate cluster
+ * list nodes: kubectl get nodes --show-labels
+ * ssh to the bastion: ssh -A -i ~/.ssh/id_rsa admin@bastion.k8i.intelllex.se
+ * the admin user is specific to Debian. If not using Debian please use the appropriate user based on your OS.
+ * read about installing addons at: https://github.com/kubernetes/kops/blob/master/docs/addons.md.
