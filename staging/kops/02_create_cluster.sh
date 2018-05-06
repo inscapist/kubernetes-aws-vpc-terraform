@@ -4,10 +4,10 @@
 # https://github.com/kubernetes/kops/blob/master/docs/cli/kops_create_cluster.md
 
 export NAME=k8i.intelllex.se
-export KOPS_STATE_STORE=s3://intelllex-se-kops-state
+export KOPS_STATE_STORE=s3://<KOPS_STATE_STORE>
 export ZONES=ap-southeast-1a,ap-southeast-1b,ap-southeast-1c
 export DNS_ZONE_PRIVATE_ID=ZXXXXXXXY
-export VPC_ID=vpc-03c4a964 # terraform output
+export VPC_ID=vpc-xxxxxxx # terraform output
 export PUB_KEY_LOCATION=~/.ssh/mykey.pub
 export TERRAFORM_OUTPUT_LOCATION=../terraform/k8s
 
