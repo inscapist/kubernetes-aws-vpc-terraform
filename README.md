@@ -1,4 +1,4 @@
-# Kops Starter - HA&Private on VPC (Terraform)
+# Kops-Terraform Starter on AWS VPC
 **HA, Private DNS, Private Topology** Kubernetes Kops Cluster
 
 Customize `terraform/variables.tf`, `terraform/main.tf` and `kops/02_create_cluster` to suit your need.
