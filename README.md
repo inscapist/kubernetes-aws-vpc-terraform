@@ -58,6 +58,12 @@ weave-net-l8tpf                                                           2/2   
 ```
 WeaveNet is baked in! Now you have a fully functional kops cluster! 
 
+## Versions
+
+Terraform v0.11.7
+Kops v1.9.0
+Kubernetes v1.9.3
+
 ## Credits
 
 This starter project is inspired by an article written by [Kasper Nissen](https://kubecloud.io/setting-up-a-highly-available-kubernetes-cluster-with-private-networking-on-aws-using-kops-65f7a94782ef) 
