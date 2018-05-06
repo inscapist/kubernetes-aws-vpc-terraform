@@ -1,5 +1,5 @@
 # kops-terraform-starter
-VPC written in terraform, as a preparation step for **HA, Private DNS, Private Topology** Kops Cluster
+**HA, Private DNS, Private Topology** Kops Cluster
 
 Customize `terraform/variables.tf`, `terraform/main.tf` and `kops/02_create_cluster` to suit your need.
 
@@ -17,7 +17,7 @@ The steps to create a kops cluster using this starter project:
 6. Create a public hosted zone on Route53 [Details](https://github.com/kubernetes/kops/blob/master/docs/aws.md)
 7. Follow numbered kops/*.sh to create kops cluster and save to `terraform/k8s`
 8. Go to `terraform` and run `terraform init; terraform plan; terraform apply;`
-9. Make sure you have api.<yourdomain> and bastion.<yourdomain> in your public DNS zone.
+9. Make sure you have api.DOMAIN and bastion.DOMAIN in your public DNS zone.
 10. run kops validate cluster
 
 Check the pods running in kube_system by running `kubectl get pod --namespace kube-system`
@@ -69,3 +69,5 @@ Kubernetes v1.9.3
 ## Credits
 
 This starter project is inspired by an article written by [Kasper Nissen](https://kubecloud.io/setting-up-a-highly-available-kubernetes-cluster-with-private-networking-on-aws-using-kops-65f7a94782ef) 
+
+Terraform syntax is inspired by [int128](https://github.com/int128/kops-terraform-starter)
