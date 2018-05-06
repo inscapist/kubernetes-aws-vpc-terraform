@@ -1,7 +1,7 @@
 #!/bin/sh
 
 export NAME=k8i.intelllex.se
-export KOPS_STATE_STORE=s3://intelllex-se-kops-state
+export KOPS_STATE_STORE=s3://<KOPS_STATE_STORE>
 export TERRAFORM_OUTPUT_LOCATION=../terraform/k8s
 
 kops edit cluster ${NAME}
