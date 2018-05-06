@@ -69,4 +69,5 @@ Kubernetes v1.9.3
 ## Credits
 
 This starter project is inspired by an article written by [Kasper Nissen](https://kubecloud.io/setting-up-a-highly-available-kubernetes-cluster-with-private-networking-on-aws-using-kops-65f7a94782ef) 
+
 Terraform syntax is inspired by [int128](https://github.com/int128/kops-terraform-starter)
