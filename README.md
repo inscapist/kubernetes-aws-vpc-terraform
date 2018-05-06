@@ -1,5 +1,5 @@
 # kops-terraform-starter
-VPC written in terraform, as a preparation step for **HA, Private DNS, Private Topology** Kops Cluster
+**HA, Private DNS, Private Topology** Kops Cluster
 
 Customize `terraform/variables.tf`, `terraform/main.tf` and `kops/02_create_cluster` to suit your need.
 
